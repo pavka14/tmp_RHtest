@@ -138,3 +138,14 @@ order to account for all the moving parts along the path (TCP connection, networ
   re-created until restart
 - there seems to be some weirdness around data points where the time ends in exactly .00 seconds; it could be related to
   the granularity of the supplied timestamp, but it seems correct? Or it could be an artefact of InfluxDB data browser?
+
+7. Adding Golang version
+7.1. Install using DNF:
+# dnf install golang
+Then, in the script directory:
+$ go mod init rhtest
+$ go get github.com/influxdata/influxdb-client-go/v2
+
+Edit the api_server.go file and change token and org to your values.
+
+$ go run api_server.go
